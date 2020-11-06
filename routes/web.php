@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+
+Route::get('/page/{id}', 'HomeController@page');
+
+Route::get('/contact-us', 'ContactUsController@index');
+Route::post('/contact-us/sendmessage', 'ContactUsController@sendMessage');
+Route::post('/contact-us/sendmessage/ajax', 'ContactUsController@sendMessageAjax');
