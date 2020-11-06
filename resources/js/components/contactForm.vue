@@ -16,7 +16,8 @@
                             <label for="message">Message:</label>
                             <textarea v-model="message" class="form-control" id="message" placeholder="Enter you message here" name="message" required></textarea>
                         </div>
-                        <button v-if="formSending == false" type="submit" class="btn btn-primary">Submit</button>
+                            <button v-if="formSending == false" type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">{{email}}</button>
                         <div>
                             <button v-if="formSending" type="submit" class="btn btn-info">Submitting</button>
                         </div>
