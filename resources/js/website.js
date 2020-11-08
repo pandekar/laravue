@@ -27,6 +27,7 @@ Vue.use(VueAxios, axios);
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('contact-us-form', require('./components/contactForm.vue').default);
+Vue.component('create-specials', require('./components/specials/create.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

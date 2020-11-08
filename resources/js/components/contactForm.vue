@@ -1,5 +1,4 @@
 <template>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -25,7 +24,6 @@
                 </div>
             </div>
         </div>
-
 </template>
 
 <script>
@@ -60,7 +58,7 @@ export default {
             }).then(response=>{
 
                 // alert('thank you! message has been sent!')
-                alert(respons.data.message);
+                alert(response.data.message);
 
                 self.formSending = false;
                 self.name = null;
