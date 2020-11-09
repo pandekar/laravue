@@ -34,6 +34,8 @@
                     <th>Description</th> 
                     <th>Was</th>
                     <th>Now</th>
+                    <th>Brand</th>
+                    <th>Actions</th>
                 </tr>
             </thhead>
             <tbody>  
@@ -43,6 +45,15 @@
                         <td>{{$data->description}}</td>
                         <td>${{$data->was_price}}</td>
                         <td>${{$data->current_price}}</td>
+                        <td>{{$data->brand}}</td>
+                        <td>
+                            <a href="/admin/specials/{{$data->id}}/edit" class="btn btn-sm btn-primary">Edit</a>
+                            <form method="post" action="/admin/specials/{{$data->id}}">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>  

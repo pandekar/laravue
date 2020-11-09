@@ -30,3 +30,5 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('admin/specials', 'SpecialsController');
 
 });
+
+Route::get('special/{id}', 'HomeController@specialEntry');

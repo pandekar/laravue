@@ -49,6 +49,7 @@ class SpecialsController extends Controller
         $new_special->description = $request->description;
         $new_special->was_price = $request->was;
         $new_special->current_price = $request->current;
+        $new_special->brand = $request->brand;
         $new_special->save();
 
         return redirect('admin/specials');
@@ -74,6 +75,10 @@ class SpecialsController extends Controller
     public function edit($id)
     {
         //
+        $special = Special::where('id', $id)->first();
+        // dd($special);
+
+        return view('admin.specials.edit', ['special' => $special]);
     }
 
     /**
@@ -86,6 +91,16 @@ class SpecialsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        // dd($request);
+        $special = Special::where('id', $id)->first();
+        $special->name = $request->name;
+        $special->description = $request->description;
+        $special->was_price = $request->was;
+        $special->current_price = $request->current;
+        $special->brand = $request->brand;
+        $special->save();
+
+        return redirect('admin/specials');
     }
 
     /**
@@ -97,5 +112,9 @@ class SpecialsController extends Controller
     public function destroy($id)
     {
         //
+        $data = Special::where('id', $id)->first();
+        $data->delete();
+
+        return redirect('admin/specials');
     }
 }

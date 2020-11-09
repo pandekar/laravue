@@ -32,7 +32,20 @@
         </li>
     </ul>
 
-    </nav> 
+    </nav>
+
+    <div class="row">
+            @foreach($specials as $special)
+            <div class="col-md-4">
+                <div style="text-align: center">
+                    <h4>{{$special->name}}</h4>
+                    <p>{{$special->was_price}}</p>
+                    <p>{{$special->current_price}}</p>
+                    <a href="/special/{{$special->id}}">Click here to view special</a>
+                </div>
+            </div>
+            @endforeach 
+    </div> 
 
     <div>
         {{$pageDetail->description}}

@@ -32,30 +32,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="post" action="/admin/specials" class="was-validated"> 
-                    @csrf
+                    <form method="post" action="/admin/specials/{{$special->id}}" class="was-validated"> 
+                        <!-- <input type="hidden" name="_method" value="PUT"> -->
+                        @method('PUT')
+                        @csrf
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+                            <input type="text" value="{{$special->name}}" class="form-control" id="name" placeholder="Enter name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="name">Brand:</label>
-                            <input type="text" class="form-control" id="brand" placeholder="Enter name" name="brand" required>
+                            <input type="text" value="{{$special->brand}}" class="form-control" id="brand" placeholder="Enter name" name="brand" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Description:</label>
-                            <textarea class="form-control" id="description" placeholder="Enter you message here" name="description" required></textarea>
+                            <textarea class="form-control" id="description" placeholder="Enter you message here" name="description" required>{{$special->description}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="name">was price:</label>
-                            <input step="0.01" type="number" class="form-control" id="was" placeholder="Enter name" name="was" required>
+                            <input step="0.01" value="{{$special->was_price}}" type="number" class="form-control" id="was" placeholder="Enter name" name="was" required>
                         </div>
                         <div class="form-group">
                             <label for="name">current price:</label>
-                            <input step="0.01" type="number" class="form-control" id="current" placeholder="Enter name" name="current" required>
+                            <input step="0.01" value="{{$special->current_price}}" type="number" class="form-control" id="current" placeholder="Enter name" name="current" required>
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-info">Submit</button>
+                            <button type="submit" class="btn btn-info">Save changes</button>
                         </div>
                     </form> 
                 </div>

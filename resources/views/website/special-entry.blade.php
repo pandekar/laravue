@@ -20,7 +20,7 @@
         <ul class="navbar-nav">
         
             <li class="nav-item">
-                <a class="nav-link" href="/admin/specials">Back</a>
+                <a class="nav-link" href="/">Back</a>
             </li> 
         
         </ul>
@@ -36,26 +36,23 @@
                     @csrf
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+                            <input type="text" value="{{$special->name}}" class="form-control" id="name" placeholder="Enter name" name="name" disabled>
                         </div>
                         <div class="form-group">
                             <label for="name">Brand:</label>
-                            <input type="text" class="form-control" id="brand" placeholder="Enter name" name="brand" required>
+                            <input type="text" value="{{$special->brand}}" class="form-control" id="brand" placeholder="Enter name" name="brand" disabled>
                         </div>
                         <div class="form-group">
                             <label for="message">Description:</label>
-                            <textarea class="form-control" id="description" placeholder="Enter you message here" name="description" required></textarea>
+                            <textarea class="form-control" id="description" placeholder="Enter you message here" name="description" disabled>{{$special->description}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="name">was price:</label>
-                            <input step="0.01" type="number" class="form-control" id="was" placeholder="Enter name" name="was" required>
+                            <input step="0.01" type="number" value="{{$special->was_price}}" class="form-control" id="was" placeholder="Enter name" name="was" disabled>
                         </div>
                         <div class="form-group">
                             <label for="name">current price:</label>
-                            <input step="0.01" type="number" class="form-control" id="current" placeholder="Enter name" name="current" required>
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-info">Submit</button>
+                            <input step="0.01" type="number" value="{{$special->current_price}}" class="form-control" id="current" placeholder="Enter name" name="current" disabled>
                         </div>
                     </form> 
                 </div>
